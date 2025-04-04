@@ -1,24 +1,33 @@
 # Projeto de Pôquer em C - AED (1º Semestre)
 
-Este projeto é uma implementação inicial de um jogo de pôquer desenvolvido em C, como parte do primeiro semestre da disciplina de Algoritmos e Estruturas de Dados (AED). O foco atual está na criação do baralho, embaralhamento das cartas e na definição dos jogadores. O jogo ainda está em desenvolvimento, com funcionalidades sendo implementadas gradualmente.
+Este é um projeto inicial de implementação de um jogo de pôquer em C, desenvolvido para a disciplina de Algoritmos e Estruturas de Dados (AED) no primeiro semestre. Neste estágio, foram implementadas as funcionalidades de criação e embaralhamento do baralho, além da definição dos jogadores.
 
 ## Funcionalidades Implementadas
 
-- **Criação do baralho**: O programa cria um baralho padrão com 52 cartas (sem curingas).
-- **Embaralhamento das cartas**: As cartas são embaralhadas aleatoriamente, garantindo que o jogo seja imprevisível.
-- **Sobreposição das cartas**: As cartas são sobrepostas de maneira adequada, respeitando a ordem do embaralhamento.
-- **Criação de jogadores**: A estrutura para criar os jogadores está implementada, permitindo que eles participem da partida.
+- **Criação do baralho**: O baralho é composto por 52 cartas, com 4 naipes (Espadas, Paus, Copas, Ouros) e 13 valores (2 a Ás).
+- **Embaralhamento do baralho**: O baralho é embaralhado utilizando o algoritmo de Fisher-Yates.
+- **Criação de jogadores**: O jogo permite a criação de jogadores, com a entrada de nomes e validação do número de jogadores (entre 2 e 4).
+- **Distribuição das cartas**: As cartas são distribuídas para os jogadores após o embaralhamento.
 
-## Estrutura do Projeto
+## Estrutura do Código
 
-O código foi organizado em funções além da função `main()` para garantir a modularidade e facilitar a manutenção:
+O código é dividido em dois arquivos principais:
 
-- **Função `criarBaralho()`**: Cria o baralho de cartas.
-- **Função `embaralharCartas()`**: Embaralha o baralho de forma aleatória.
-- **Função `criarJogadores()`**: Cria os jogadores e os prepara para a partida.
+1. **Cartas.h**: Contém a definição das estruturas de dados e funções relacionadas ao baralho e pilha de cartas. Inclui:
+   - Definições das estruturas `tp_carta` e `Pilha`.
+   - Funções para inicializar, embaralhar e manipular o baralho.
+
+2. **main.c**: Contém a lógica principal do jogo, onde os jogadores são criados, seus nomes são inseridos, e as cartas são distribuídas.
+
+### Funções principais
+
+- **criarBaralho(Pilha *p)**: Cria o baralho com 52 cartas e o armazena na pilha.
+- **embaralhar(Pilha *p)**: Embaralha as cartas utilizando o algoritmo de Fisher-Yates.
+- **push(Pilha *p, tp_carta carta)**: Adiciona uma carta à pilha.
+- **pop(Pilha *p)**: Remove e retorna a carta do topo da pilha.
 
 ## Instruções para Execução
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/usuario/repository.git
+   git clone https://github.com/andredeomondes/poquer-cimatec.git
